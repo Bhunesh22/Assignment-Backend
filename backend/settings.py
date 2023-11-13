@@ -157,8 +157,9 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8000',
     'http://127.0.0.1:9000',
     'http://127.0.0.1:8000',
+    'https://assignment.thomso.in',
 )
 
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'https://assignment.thomso.in']
 CORS_ORIGIN_ALLOW_ALL=True
 
