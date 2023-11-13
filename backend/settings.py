@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
     'users',
     'historical_data',
     'orders',
@@ -154,10 +155,9 @@ SIMPLE_JWT = {
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:3000",
     'http://google.com',
+    'http://hostname.example.com',
     'http://localhost:8000',
     'http://127.0.0.1:9000',
-    'http://127.0.0.1:8000',
-    'https://assignment.thomso.in',
 )
 
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'https://assignment.thomso.in']
