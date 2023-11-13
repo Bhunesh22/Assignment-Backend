@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -160,6 +161,6 @@ CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:9000',
 )
 
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'https://assignment.thomso.in']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'https://assignment.thomso.in', "http://localhost:3000",]
 CORS_ORIGIN_ALLOW_ALL=True
 
