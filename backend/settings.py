@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a5qt7^c+k+lsqjhj!po$5=_cg7!%^30t38vbfjcla5#kb)(=k(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["13.233.142.129"]
+ALLOWED_HOSTS = ["13.233.142.129", "127.0.0.1", "assignment.thomso.in"]
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'users',
     'historical_data',
     'orders',
-    'whitenoise.runserver_nostatic',
+    # 'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
