@@ -5,6 +5,6 @@ from .views import *
 
 
 urlpatterns = [
-    path('historical_price_data/', HistoricalPriceData),
+    path('historical-data', HistoricalPriceData),
     # path('add_data', AddData),
 ]

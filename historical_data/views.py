@@ -16,25 +16,29 @@ def HistoricalPriceData(request):
         print(from_date, "from_date")
         print(to_date, "to_date")
         # print(datetime.date(1986, 7, 28), "time")
-        if from_date == "null" and to_date == "null":
+        if from_date == "None" and to_date == "None":
+            print(1)
             data = HistoriclaData.objects.all().values("index", "price", "date", "instrument_name")
             if len(data) != 0 :
                 return Response(data, status=status.HTTP_200_OK)
             else:
                 return Response({"error": "Data Not Avaliable"}, status=status.HTTP_400_BAD_REQUEST)
-        elif from_date == "null" and to_date != "null":
+        elif from_date == "None" and to_date != "None":
+            print(2)
             data = HistoriclaData.objects.filter(date__date__range = (("2017-01-02"), (to_date))).values("index", "price", "date", "instrument_name")
             if len(data) != 0 :
                 return Response(data, status=status.HTTP_200_OK)
             else:
                 return Response({"error": "Data Not Avaliable"}, status=status.HTTP_400_BAD_REQUEST)
-        elif from_date != "null" and to_date == "null":
+        elif from_date != "None" and to_date == "None":
+            print(3)
             data = HistoriclaData.objects.filter(date__date__range = ((from_date), ("2021-12-31"))).values("index", "price", "date", "instrument_name")
             if len(data) != 0 :
                 return Response(data, status=status.HTTP_200_OK)
             else:
                 return Response({"error": "Data Not Avaliable"}, status=status.HTTP_400_BAD_REQUEST)
-        elif from_date != "null" and to_date != "null":
+        elif from_date != "None" and to_date != "None":
+            print(4)
             data = HistoriclaData.objects.filter(date__date__range = ((from_date), (to_date))).values("index", "price", "date", "instrument_name")
             if len(data) != 0 :
                 return Response(data, status=status.HTTP_200_OK)
