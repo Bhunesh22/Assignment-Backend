@@ -16,8 +16,13 @@ def Holdings(request):
                         "data": data
                         }
             return Response(response, status=status.HTTP_200_OK)
-        else:
-            return Response({"error": "Data Not Avaliable"}, status=status.HTTP_400_BAD_REQUEST)
+        if len(data) == 0:
+            response = {
+                        "status": "fail",
+                        "message": "Data Not Avaliable"
+                        }
+            return Response(response, status=status.HTTP_200_OK)
+        return Response({"error": "Something is wrong in data"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['POST'])
@@ -36,4 +41,4 @@ def Order_palce(request):
                         }
             return Response(response, status=status.HTTP_201_CREATED)
             # print(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

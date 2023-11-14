@@ -81,6 +81,7 @@ def Login(request):
             response = {
                         "status": status.HTTP_200_OK,
                         "message": "success",
+                        "user_id": user_detail['id'],
                         "data": res_data
                         }
             return Response(response, status = status.HTTP_200_OK)
